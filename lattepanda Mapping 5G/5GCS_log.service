@@ -1,0 +1,13 @@
+[Unit]
+Description=5G Modem Signal Logger. This is for the flight in BTU to measure the 5G KPIs
+After=ModemManager.service
+Wants=ModemManager.service
+
+[Service]
+ExecStart=/opt/5GCSlog/5GCSlog.sh
+Restart=always
+User=root
+Group=root
+
+[Install]
+WantedBy=default.target
